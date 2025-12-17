@@ -53,17 +53,19 @@ RULER_HQA_TESTS = [50, 100, 200, 400, 800, 1600, 3200, 6400]
 RULER_HQA_TESTS_OVER_1M = [12800, 25600]
 # for other ruler task, we use the standard synthetic scripts for convenient and control the context length.
 RULER_TASKS = [
-    "niah_single_1",
-    "niah_single_2",
-    "niah_single_3",
-    "niah_multikey_1",
-    "niah_multikey_2",
+    # "niah_single_1",
+    # "niah_single_2",
+    # "niah_single_3",
+    # "niah_multikey_1",
+    # "niah_multikey_2",
+
     "niah_multikey_3",
-    "niah_multivalue",
-    "niah_multiquery",
-    "vt",
-    "fwe",
-    "qa_1",
+
+    # "niah_multivalue",
+    # "niah_multiquery",
+    # "vt",
+    # "fwe",
+    # "qa_1",
 ]
 RULER_PROMPT_LENGTH = [8192, 16384, 32768, 65536, 131072, 262144, 524288]
 RULER_GENERRAL_TESTS = [(task, length) for task in RULER_TASKS for length in RULER_PROMPT_LENGTH]
@@ -304,21 +306,23 @@ MemoryAgent_14B_5k_1k = Config(
 CONFIGS = [
     # OURS
     MemoryAgent_7B_5k_1k,
-    MemoryAgent_14B_5k_1k,
+    # MemoryAgent_14B_5k_1k,
+
     # Main Result Baselines
-    L1,
-    Qwen25_14B_1M,
-    Qwen25_7B_1M,
-    R1_32B,
-    R1_14B,
-    R1_7B,
+    # L1,
+    # Qwen25_14B_1M,
+    # Qwen25_7B_1M,
+    # R1_32B,
+    # R1_14B,
+    # R1_7B,
+
     # Ablation Baselines
-    Qwen25_32B_128k,
-    Qwen25_14B_128k,
-    Qwen25_7B_128k,
-    Qwen25_32B_5k_1k,
-    Qwen25_14B_5k_1k,
-    Qwen25_7B_5k_1k,
+    # Qwen25_32B_128k,
+    # Qwen25_14B_128k,
+    # Qwen25_7B_128k,
+    # Qwen25_32B_5k_1k,
+    # Qwen25_14B_5k_1k,
+    # Qwen25_7B_5k_1k,
 ]
 
 def run_ruler_hqa():
@@ -352,4 +356,4 @@ def run_ood_tasks():
 if __name__ == "__main__":
     print(f"{SERVE_PORT=}, {DASH_PORT=}, {MODELROOT=}")
     run_ruler_hqa()
-    run_ood_tasks()
+    # run_ood_tasks()
