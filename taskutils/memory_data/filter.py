@@ -80,7 +80,7 @@ def main(input, output, resume=True):
     Path(output).parent.mkdir(exist_ok=True, parents=True)
     if not resume or not Path(output).exists():
         df = pd.read_parquet(input)
-        tasks = [chat(model, msg) for msg in df['prompt'] for model in ["Qwen2.5-7B", "Qwen2.5-7B-Instruct"]]
+        tasks = [chat(model, msg) for msg in df['prompt'] for model in ["Qwen/Qwen2.5-7B", "Qwen/Qwen2.5-7B-Instruct"]]
         ret = asyncio.run(async_main(tasks, max_workers=1024*8))
         base, inst = ([
             [ret[idx].choices[i].message.content for i in [0, 1]] # each response in the api return value
