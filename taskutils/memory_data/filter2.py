@@ -12,8 +12,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 import pandas as pd
-def process(filename, num):
-    df = pd.read_parquet(f'{filename}_result_doc100.parquet')
+def process(filename, num, doc_num):
+    df = pd.read_parquet(f'{filename}_result_doc{doc_num}.parquet')
     def sprint(sample):
         print("======RSP PRE0")
         print(sample.responses_pretrain[0])
@@ -41,7 +41,7 @@ def process(filename, num):
     print(sum(boxed_corr))
     any_corr = pre_contains_corr | pre_boxed_corr | contains_corr | boxed_corr
     print("available:", len(df)-sum(any_corr))
-    df[~any_corr].head(num).to_parquet(f"{filename}.parquet")
+    df[~any_corr].head(num).to_parquet(f"{filename}_doc{doc_num}.parquet")
 if __name__ == "__main__":
-    process("hotpotqa_train", 8192)
-    process("hotpotqa_dev", 128)
+    process("hotpotqa_train", 8192, 100)
+    process("hotpotqa_dev", 128, 100)
