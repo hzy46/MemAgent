@@ -51,7 +51,7 @@ async def chat(model, messages):
 
 import asyncio
 import time
-from memory_data.utils import async_main
+from utils import async_main
 
 from hotpotqa_verifier import compute_score
 def scores(args):

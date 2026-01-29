@@ -8,3 +8,8 @@ http://curtis.ml.cmu.edu/datasets/hotpot/hotpot_dev_distractor_v1.json
     out=hotpotqa_dev.json" > __download.txt
 aria2c -x 10 -s 10 -j 2 -i __download.txt
 rm __download.txt
+
+
+### train
+wget http://curtis.ml.cmu.edu/datasets/hotpot/hotpot_train_v1.1.json
+mv hotpot_train_v1.1.json hotpotqa_train.json
