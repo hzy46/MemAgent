@@ -13,7 +13,7 @@
 # limitations under the License.
 import pandas as pd
 def process(filename, num):
-    df = pd.read_parquet(f'{filename}_result.parquet')
+    df = pd.read_parquet(f'{filename}_result_doc100.parquet')
     def sprint(sample):
         print("======RSP PRE0")
         print(sample.responses_pretrain[0])
