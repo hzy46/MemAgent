@@ -81,7 +81,7 @@ def main(input, output, resume=True):
     if not resume or not Path(output).exists():
         df = pd.read_parquet(input)
         tasks = [chat(model, msg) for msg in df['prompt'] for model in ["Qwen/Qwen2.5-7B", "Qwen/Qwen2.5-7B-Instruct"]]
-        ret = asyncio.run(async_main(tasks, max_workers=1024*8))
+        ret = asyncio.run(async_main(tasks, max_workers=1024))
         base, inst = ([
             [ret[idx].choices[i].message.content for i in [0, 1]] # each response in the api return value
             for idx in range(model, len(tasks), 2) # each return valuse of api calling to the model
