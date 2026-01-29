@@ -129,6 +129,6 @@ if __name__ == "__main__":
     random.seed(42)
     
     QAS_train, DOCS_train = read_hotpotqa('hotpotqa_train.json')
-    generate_dataset(80000, 'hotpotqa_train_process', 200, QAS_train, DOCS_train)
+    generate_dataset(80000, 'hotpotqa_train_process_doc100', 100, QAS_train, DOCS_train)
     QAS_dev, DOCS_dev = read_hotpotqa('hotpotqa_dev.json')
-    generate_dataset(200, 'hotpotqa_dev_process', 200, QAS_dev, DOCS_dev)
+    generate_dataset(200, 'hotpotqa_dev_process_doc100', 100, QAS_dev, DOCS_dev)
